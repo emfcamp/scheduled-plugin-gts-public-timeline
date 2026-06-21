@@ -186,6 +186,7 @@ class MastodonFetcher:
                     continue
                 if toot.created_timestamp < self.not_before:
                     self._log("ignoring {} because it was created too long ago (is {}, want {})".format(toot, toot.created_timestamp, self.not_before), tag=tag)
+                    continue
                 self.posts.append(toot)
         except Exception as e:
             self._log(e, tag=tag)
