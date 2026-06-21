@@ -60,7 +60,7 @@
         ],
         "default": 20
     }, {
-        "title": "Exlude toots before",
+        "title": "Exclude toots before",
         "ui_width": 3,
         "name": "not_before",
         "type": "string",
