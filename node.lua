@@ -9,7 +9,6 @@ local toots = {}
 gl.setup(NATIVE_WIDTH, NATIVE_HEIGHT)
 
 util.json_watch("tootlist.json", function(new_toots)
-    log("new toots")
     toots = new_toots
 end)
 
@@ -30,7 +29,7 @@ function node.render()
         for idx = 1, #toots do
             toot = toots[idx]
 
-            text_font:write(1, y, toot.id .. " - " .. toot.display_name .. " - " .. tostring(toot.created_at), text_size, 1,1,1,1)
+            text_font:write(1, y, toot.account.display_name .. " - " .. tostring(toot.created_at) .. " - " .. toot.content, text_size, 1,1,1,1)
             y = y + text_size + 10
         end
     end
