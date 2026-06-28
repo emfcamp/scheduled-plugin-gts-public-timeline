@@ -20,7 +20,7 @@ local text_over_under
 local profile_over_under
 local ignore_non_media_posts = false
 local logo = resource.load_image{
-    file = api.localized "mastodon-logo.png"
+    file = api.localized "gts-logo.png"
 }
 local max_text_lines = 10
 
@@ -336,7 +336,7 @@ function M.task(starts, ends, config, x1, y1, x2, y2)
     end
 
     if show_logo then
-        a.add(anims.logo(S, E, boundingbox_width-130, boundingbox_height-130, logo, 100))
+        a.add(anims.logo(S, E, boundingbox_width-100, boundingbox_height-89, logo, 100))
     end
 
     for now in api.frame_between(starts, ends) do

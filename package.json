@@ -1,7 +1,7 @@
 {
-    "name": "Mastodon Timeline",
+    "name": "GoToSocial Local Public Timeline",
     "author": "kunsi, sophie, dividuum",
-    "desc": "Shows toots from a tag timeline, based on the Twitter Module by fw@dividuum.de",
+    "desc": "Shows toots from a gts local public timeline, based on the Twitter Module by fw@dividuum.de",
     "nesting": {
         "parents": ["scheduled-plugin"],
         "childs": []
@@ -9,6 +9,6 @@
     "platforms": ["pi/epoch-1", "pi/epoch-2"],
     "offline": {
         "support": "no",
-        "info": "Needs to fetch remote mastodon content"
+        "info": "Needs to fetch remote content"
     }
 }

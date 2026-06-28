@@ -4,60 +4,19 @@
         "network": "Needs to access public API of a Mastodon instance"
     },
     "options": [{
-        "title": "Mastodon Tag Timeline",
+        "title": "GTS local public timeline",
         "type": "section"
     }, {
-        "title": "Mastodon Instance Base URL",
+        "title": "GTS Instance Base URL",
         "ui_width": 12,
         "name": "baseurl",
         "type": "string",
-        "default": "https://mastodon.social"
-    }, {
-        "title": "Mastodon Access Token",
-        "ui_width": 12,
-        "name": "accesstoken",
-        "type": "string",
-        "default": "insert_your_access_token_here",
-        "hint": "Obtain an access token from your mastodon instance, see https://docs.joinmastodon.org/client/authorized/#token"
-    }, {
-        "title": "Tag Query",
-        "ui_width": 12,
-        "name": "tag",
-        "type": "string",
-        "default": "infobeamer",
-        "hint": "Multiple tags can be separated by commas, no spaces. Don't put a # in there, mastodon tags are without them"
-    }, {
-        "title": "Filter Accounts",
-        "ui_width": 12,
-        "name": "filter_accounts",
-        "hint": "Commaseparated list of accounts to filter out filter out from tootlist",
-        "type": "string",
-        "default": ""
-    }, {
-        "title": "Filter Garbage",
-        "ui_width": 3,
-        "name": "filter_garbage",
-        "hint": "Remove toots that are crossposts from birdsite",
-        "type": "boolean",
-        "default": true
-    }, {
-        "title": "Filter toots with content warnings",
-        "ui_width": 3,
-        "name": "filter_spoilertexttoots",
-        "hint": "Remove toots that have content warnings",
-        "type": "boolean",
-        "default": false
+        "default": "https://social.emfcamp.org"
     }, {
         "title": "Number of toots",
         "ui_width": 3,
         "name": "count",
-        "type": "select",
-        "options": [
-            [10, "10 toots"],
-            [20, "20 (default)"],
-            [40, "40 toots"],
-            [80, "80 toots"]
-        ],
+        "type": "integer",
         "default": 20
     }, {
         "title": "Exclude toots before",
