@@ -121,7 +121,7 @@ class GTSFetcher:
         sys.stderr.write("[gts] {}\n".format(something))
 
     def _fetch(self, url):
-        self._log("starting _fetch('{url}')".format(url))
+        self._log("starting _fetch('{}')".format(url))
         r = session.get(url)
         self._log("http status code was {}".format(r.status_code))
         r.raise_for_status()
