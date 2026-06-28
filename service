@@ -121,9 +121,9 @@ class GTSFetcher:
         sys.stderr.write("[gts] {}\n".format(something))
 
     def _fetch(self, url):
-        self._log("starting _fetch()", tag=tag)
+        self._log("starting _fetch('{url}')".format(url))
         r = session.get(url)
-        self._log("http status code was {}".format(r.status_code), tag=tag)
+        self._log("http status code was {}".format(r.status_code))
         r.raise_for_status()
         return r.json()
 
@@ -140,14 +140,13 @@ class GTSFetcher:
             for post in toots:
                 toot = GTSPost(post, instance["account_domain"])
                 if toot in self.posts:
-                    self._log("ignoring {} because duplicate".format(toot), tag=tag)
+                    self._log("ignoring {} because duplicate".format(toot))
                     continue
                 if toot.created_timestamp < self.not_before:
                     self._log(
                         "ignoring {} because it was created too long ago (is {}, want {})".format(
                             toot, toot.created_timestamp, self.not_before
                         ),
-                        tag=tag,
                     )
                     continue
                 self.posts.append(toot)
