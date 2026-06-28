@@ -1,3 +1,5 @@
+local json = require "json"
+
 util.init_hosted()
 
 local text_font
@@ -25,7 +27,7 @@ function node.render()
     y = text_size + 60
 
     if #toots then
-        for idx, #toots do
+        for idx = 1, #toots do
             toot = toots[idx]
 
             text_font:write(1, y, toot.id .. " - " .. toot.display_name .. " - " .. tostring(toot.created_at), text_size, 1,1,1,1)
