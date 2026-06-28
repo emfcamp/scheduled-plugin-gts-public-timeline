@@ -1,5 +1,5 @@
 {
-    "name": "Plugin: Mastodon Tag Timeline",
+    "name": "Plugin: GoToSocial Timeline",
     "permissions": {
         "network": "Needs to access public API of a Mastodon instance"
     },
