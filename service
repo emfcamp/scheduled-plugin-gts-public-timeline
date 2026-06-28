@@ -56,7 +56,10 @@ class GTSPost:
         return self.post["id"]
 
     def cache_images(self):
-        self.profile_image = cache_image(self.post["account"]["avatar_static"])
+        if self.post["account"]["avatar_static"]:
+            self.profile_image = cache_image(self.post["account"]["avatar_static"])
+        else:
+            self.profile_image = "gts-logo.png"
         for attachment in self.post.get("media_attachments", set()):
             if attachment["type"] == "image":
                 if (
