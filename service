@@ -21,7 +21,6 @@ session.headers = {
     "User-Agent": "info-beamer poller serial {}".format(
         environ.get("SERIAL", "unknown")
     ),
-    "Accept": "application/json",
 }
 
 
@@ -126,7 +125,7 @@ class GTSFetcher:
 
     def _fetch(self, url):
         self._log("starting _fetch('{}')".format(url))
-        r = session.get(url)
+        r = session.get(url, headers={"Accept": "application/json"})
         self._log("http status code was {}".format(r.status_code))
         r.raise_for_status()
         return r.json()
