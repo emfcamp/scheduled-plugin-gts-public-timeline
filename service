@@ -16,6 +16,14 @@ from urlparse import urlparse
 
 from hosted import config
 
+session = requests.Session()
+session.headers = {
+    "User-Agent": "info-beamer poller serial {}".format(
+        environ.get("SERIAL", "unknown")
+    ),
+    "Accept": "application/json",
+}
+
 
 def cache_image(url):
     image_url = urlparse(url)
@@ -103,13 +111,6 @@ class GTSPost:
 
 class GTSFetcher:
     def __init__(self):
-        self.session = requests.Session()
-        self.session.headers = {
-            "User-Agent": "info-beamer poller serial {}".format(
-                environ.get("SERIAL", "unknown")
-            ),
-            "Accept": "application/json",
-        }
         self.not_before = int(
             time.mktime(datetime.strptime(config.not_before, "%Y-%m-%d").timetuple())
         )
